@@ -10,7 +10,7 @@ Cargo.lock
 **/*.rs.bk
 
 **/*.un~
-**/*.swp
+**/*.swp~
 
 
 # Added by cargo
