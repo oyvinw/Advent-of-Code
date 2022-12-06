@@ -1,9 +1,7 @@
 pub fn solve() {
     let data = std::fs::read_to_string(r"data1.txt").expect("missing data 1");
 
-    let mut biggest = 0;
-    let mut second_biggest = 0;
-    let mut third_biggest = 0;
+    let (mut biggest, mut second_biggest, mut third_biggest) = (0, 0, 0);
 
     let mut sum = 0;
     for line in data.lines() {
@@ -21,7 +19,6 @@ pub fn solve() {
                 x if x > third_biggest => {
                     third_biggest = sum;
                 }
-
                 _ => {}
             }
 
