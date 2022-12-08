@@ -122,7 +122,3 @@ pub fn solve(){
     println!("Best tree score: {}", biggest);
 
 }
-
-fn scout_outside(){
-
-}
