@@ -22,8 +22,9 @@ fn main() {
     //day5::solve();
     //day6::solve();
     //day7::solve();
-    day8::solve();
+    //day8::solve();
 
     //Fancy stuff
     //day6::fancy_terminal();
+    day8::fancy_terminal();
 }

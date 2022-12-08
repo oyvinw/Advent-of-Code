@@ -26,4 +26,5 @@ fn main() {
 
     //Fancy stuff
     //day6::fancy_terminal();
+    //day8::fancy_terminal();
 }
