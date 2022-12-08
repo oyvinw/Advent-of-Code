@@ -61,22 +61,22 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
                     break 'outer;
                 }
 
-            terminal.draw(|f| {
-                let size = f.size();
-                f.render_widget(
-                    frame_text(
-                        &data,
-                        i,
-                        j,
-                        ColorSet {
-                            bracket_color: Color::LightYellow,
-                            highlight_color: Color::Blue,
-                        },
-                    ),
-                    size,
-                );
-            })?;
-            } 
+                terminal.draw(|f| {
+                    let size = f.size();
+                    f.render_widget(
+                        frame_text(
+                            &data,
+                            i,
+                            j,
+                            ColorSet {
+                                bracket_color: Color::LightYellow,
+                                highlight_color: Color::Blue,
+                            },
+                        ),
+                        size,
+                    );
+                })?;
+            }
         }
     }
 
