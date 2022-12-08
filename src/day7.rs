@@ -64,7 +64,7 @@ pub fn solve() {
     println!("sum of all sub 100k: {}", total_under_100k);
     println!("total used: {} of {}", total_used, total_system_size);
 
-    let required_space = ((total_used + space_needed) - total_system_size);
+    let required_space = (total_used + space_needed) - total_system_size;
 
     file_tree.do_calc(0, &mut total_under_100k, &mut smallest, required_space);
 
