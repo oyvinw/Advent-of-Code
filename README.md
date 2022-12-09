@@ -5,3 +5,6 @@
 
 ## Day 8 visualization
 ![image](https://user-images.githubusercontent.com/25322338/206530683-0cf0e7e4-b945-4286-bc96-e39c64b59a91.png)
+
+## Day 9 visualization
+![day9_vis](https://user-images.githubusercontent.com/25322338/206720794-4fc5da61-edaf-44f8-8eee-5bfde144e49e.gif)
