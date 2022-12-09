@@ -12,6 +12,7 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
 
 fn main() {
     //Solutions
@@ -23,8 +24,10 @@ fn main() {
     //day6::solve();
     //day7::solve();
     //day8::solve();
+    //day9::solve();
 
     //Fancy stuff
     //day6::fancy_terminal();
-    day8::fancy_terminal();
+    //day8::fancy_terminal();
+    day9::fancy_terminal();
 }

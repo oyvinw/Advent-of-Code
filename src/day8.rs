@@ -1,15 +1,15 @@
 #![allow(unused_mut)]
 #![allow(unused_variables)]
 
-pub fn solve(){
+pub fn solve() {
     let data = std::fs::read_to_string(r"data8.txt").expect("missing data 8");
 
     let mut value_map = vec![];
 
-    for line in data.lines(){
+    for line in data.lines() {
         let mut row = vec![];
-        for c in line.chars(){
-            row.push(c.to_digit(10).unwrap() as i32); 
+        for c in line.chars() {
+            row.push(c.to_digit(10).unwrap() as i32);
         }
         value_map.push(row);
     }
@@ -26,17 +26,16 @@ pub fn solve(){
     let (_, _, score) = calculate_ideal_base(&value_map);
     println!("Ideal score: {}", score);
 
-
     //println!("Best tree score: {}", biggest);
 }
 
 fn calculate_ideal_base(value_map: &Vec<Vec<i32>>) -> (usize, usize, i32) {
     //PART2
     let mut biggest = 0;
-    let (mut xCoord, mut yCoord) = (0,0);
+    let (mut xCoord, mut yCoord) = (0, 0);
 
-    for y in 0..value_map.len(){
-        for x in 0..value_map[y].len(){
+    for y in 0..value_map.len() {
+        for x in 0..value_map[y].len() {
             let height = value_map[y][x];
 
             let (mut left, mut right, mut up, mut down) = (0, 0, 0, 0);
@@ -82,14 +81,13 @@ fn calculate_ideal_base(value_map: &Vec<Vec<i32>>) -> (usize, usize, i32) {
 }
 
 fn calculate_visible_outside(value_map: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-
-    let mut visible_map: Vec<Vec<i32>> = vec![vec![0 ; value_map[0].len()] ; value_map.len()];
+    let mut visible_map: Vec<Vec<i32>> = vec![vec![0; value_map[0].len()]; value_map.len()];
 
     //PART 1
     //Left to right
-    for y in 0..value_map.len(){
+    for y in 0..value_map.len() {
         let mut tallest = -1;
-        for x in 0..value_map[y].len(){
+        for x in 0..value_map[y].len() {
             let value = value_map[y][x];
             if value > tallest {
                 visible_map[y][x] = 1;
@@ -99,9 +97,9 @@ fn calculate_visible_outside(value_map: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     }
 
     //Right to left
-    for y in 0..value_map.len(){
+    for y in 0..value_map.len() {
         let mut tallest = -1;
-        for x in (0..value_map[y].len()).rev(){
+        for x in (0..value_map[y].len()).rev() {
             let value = value_map[y][x];
             if value > tallest {
                 visible_map[y][x] = 1;
@@ -111,9 +109,9 @@ fn calculate_visible_outside(value_map: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     }
 
     //Bottom to top
-    for x in 0..value_map[0].len(){
+    for x in 0..value_map[0].len() {
         let mut tallest = -1;
-        for y in (0..value_map.len()).rev(){
+        for y in (0..value_map.len()).rev() {
             let value = value_map[y][x];
             if value > tallest {
                 visible_map[y][x] = 1;
@@ -123,9 +121,9 @@ fn calculate_visible_outside(value_map: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     }
 
     //Top to bottom
-    for x in 0..value_map[0].len(){
+    for x in 0..value_map[0].len() {
         let mut tallest = -1;
-        for y in 0..value_map.len(){
+        for y in 0..value_map.len() {
             let value = value_map[y][x];
             if value > tallest {
                 visible_map[y][x] = 1;
@@ -161,10 +159,10 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
 
     let mut value_map = vec![];
 
-    for line in data.lines(){
+    for line in data.lines() {
         let mut row = vec![];
-        for c in line.chars(){
-            row.push(c.to_digit(10).unwrap() as i32); 
+        for c in line.chars() {
+            row.push(c.to_digit(10).unwrap() as i32);
         }
         value_map.push(row);
     }
@@ -199,7 +197,7 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
         text.push(Spans::from(spans_vec));
     }
 
-     let p = Paragraph::new(text)
+    let p = Paragraph::new(text)
         .block(
             Block::default()
                 .title("TREE SCANNER")
@@ -225,6 +223,6 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
         DisableMouseCapture
     )?;
     terminal.show_cursor()?;
-    
-    Ok(()) 
+
+    Ok(())
 }

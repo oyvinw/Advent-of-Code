@@ -127,7 +127,6 @@ impl FileArena {
 
         for child_node in &self.arena[node].children {
             child_sum += self.do_calc(*child_node, total, smallest, space_needed);
-            //child_sum += self.arena[*child_node].folder.size;
         }
 
         let folder_sum = child_sum + &self.arena[node].folder.size;
