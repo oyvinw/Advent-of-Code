@@ -156,7 +156,7 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
             traversed.push(rope[rope.len() - 1]);
         }
 
-        let mut points: Vec<(f64, f64)> = rope
+        let points: Vec<(f64, f64)> = rope
             .iter()
             .map(|point| (f64::from(point.x), f64::from(point.y)))
             .collect();
@@ -174,13 +174,13 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
                 Axis::default()
                     .title(Span::styled("X Axis", Style::default().fg(Color::Red)))
                     .style(Style::default().fg(Color::White))
-                    .bounds([-25.0, 25.0])
+                    .bounds([-25.0, 25.0]),
             )
             .y_axis(
                 Axis::default()
                     .title(Span::styled("Y Axis", Style::default().fg(Color::Red)))
                     .style(Style::default().fg(Color::White))
-                    .bounds([-25.0, 25.0])
+                    .bounds([-25.0, 25.0]),
             );
 
         terminal.draw(|f| {

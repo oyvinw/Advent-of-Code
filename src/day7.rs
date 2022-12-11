@@ -1,3 +1,5 @@
+#![allow(mutable_borrow_reservation_conflict)]
+
 use std::rc;
 
 pub fn solve() {
