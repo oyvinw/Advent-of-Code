@@ -38,10 +38,9 @@ pub fn solve() -> Result<(), io::Error> {
     let mut total_signal = 0;
     let mut machine = Machine::new(ins);
 
-
     while machine.execution_in_progress {
         machine.run();
-        
+
         //Rendering
         let mut span_buffer = vec![];
 
@@ -92,12 +91,11 @@ struct Machine {
     current_instruction: Option<Instruction>,
     remaining_cycles: i32,
     execution_in_progress: bool,
-    display_buffer: Vec<Vec<char>>
+    display_buffer: Vec<Vec<char>>,
 }
 
 impl Machine {
     fn run(&mut self) {
-
         //Pre
         if let None = self.current_instruction {
             //Look for next instructions
@@ -117,7 +115,7 @@ impl Machine {
                 return;
             }
         }
-        
+
         //During
         self.update_display_buffer();
 
@@ -142,7 +140,7 @@ impl Machine {
 
         match b_pixel as i32 - self.x_reg {
             -1 | 0 | 1 => self.display_buffer[b_line][b_pixel] = '#',
-            _ => {},
+            _ => {}
         }
     }
 
@@ -167,7 +165,7 @@ impl Machine {
             current_instruction: None,
             remaining_cycles: 0,
             execution_in_progress: true,
-            display_buffer: vec![vec![' ' ; 40]; 6],
+            display_buffer: vec![vec![' '; 40]; 6],
         };
     }
 }
