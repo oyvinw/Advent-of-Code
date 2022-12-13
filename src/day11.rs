@@ -31,8 +31,16 @@ pub fn solve() {
                         //Cheeky assumption that the only self operations are multiplications
                         "old" => monkeys[idx].operation = Operation::MultiplySelf,
                         _ => match sign {
-                            "+" => monkeys[idx].operation = Operation::Add { value: value.parse::<u64>().unwrap() },
-                            "*" => monkeys[idx].operation = Operation::Multiply { value: value.parse::<u64>().unwrap() },
+                            "+" => {
+                                monkeys[idx].operation = Operation::Add {
+                                    value: value.parse::<u64>().unwrap(),
+                                }
+                            }
+                            "*" => {
+                                monkeys[idx].operation = Operation::Multiply {
+                                    value: value.parse::<u64>().unwrap(),
+                                }
+                            }
                             _ => {}
                         },
                     }
@@ -46,8 +54,15 @@ pub fn solve() {
                     let idx = monkeys.len() - 1;
                     let (_, b) = first.split_once(' ').unwrap();
                     match b {
-                        "true" | "false" => {monkeys[idx].recieving_monkeys.push(second.split_whitespace().nth(3).unwrap().parse::<usize>().unwrap())},
-                        _ => {},
+                        "true" | "false" => monkeys[idx].recieving_monkeys.push(
+                            second
+                                .split_whitespace()
+                                .nth(3)
+                                .unwrap()
+                                .parse::<usize>()
+                                .unwrap(),
+                        ),
+                        _ => {}
                     }
                 }
                 _ => {}
@@ -58,7 +73,7 @@ pub fn solve() {
     let mut monkey_business_index = vec![0; monkeys.len()];
 
     //computation
-    let mut modulo: u64 = 1; 
+    let mut modulo: u64 = 1;
     for monkey in &monkeys {
         modulo *= monkey.test_div;
     }
@@ -90,7 +105,10 @@ pub fn solve() {
     }
 
     monkey_business_index.sort_unstable();
-    println!("{:?}", monkey_business_index.pop().unwrap() as u128 * monkey_business_index.pop().unwrap() as u128); 
+    println!(
+        "{:?}",
+        monkey_business_index.pop().unwrap() as u128 * monkey_business_index.pop().unwrap() as u128
+    );
 }
 
 #[derive(Debug)]
