@@ -16,7 +16,7 @@ use tui::{
 use std::collections::HashMap;
 
 pub fn solve() -> Result<(), io::Error> {
-    let data = std::fs::read_to_string(r"data10.txt").expect("missing data 10");
+    let data = std::fs::read_to_string(r"data/data10.txt").expect("missing data 10");
 
     enable_raw_mode()?;
     let mut stdout = io::stdout();

@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string(r"data6.txt").expect("missing data 6");
+    let data = std::fs::read_to_string(r"data/data6.txt").expect("missing data 6");
     let byte_data = data.as_bytes();
 
     let identifier_length = 14;
@@ -45,7 +45,7 @@ pub fn fancy_terminal() -> Result<(), io::Error> {
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
 
-    let data = std::fs::read_to_string(r"data6.txt").expect("missing data 6");
+    let data = std::fs::read_to_string(r"data/data6.txt").expect("missing data 6");
     let byte_data = data.as_bytes();
 
     let identifier_length = 4;

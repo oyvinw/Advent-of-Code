@@ -1,10 +1,8 @@
-#![allow(mutable_borrow_reservation_conflict)]
-
 use std::rc;
 
 pub fn solve() {
     let mut file_tree = FileArena::default();
-    let data = std::fs::read_to_string(r"data7.txt").expect("missing data 7");
+    let data = std::fs::read_to_string(r"data/data7.txt").expect("missing data 7");
 
     //parse tree
     let mut current_node = file_tree.node(Folder {

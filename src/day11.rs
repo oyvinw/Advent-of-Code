@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string("data11.txt").expect("missing data 11");
+    let data = std::fs::read_to_string("data/data11.txt").expect("missing data 11");
 
     //parsing
     let mut monkeys: Vec<Monkey> = vec![];

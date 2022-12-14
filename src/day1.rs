@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string(r"data1.txt").expect("missing data 1");
+    let data = std::fs::read_to_string(r"data/data1.txt").expect("missing data 1");
 
     let (mut biggest, mut second_biggest, mut third_biggest) = (0, 0, 0);
 

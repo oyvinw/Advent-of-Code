@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string(r"data4.txt").expect("missing data 4");
+    let data = std::fs::read_to_string(r"data/data4.txt").expect("missing data 4");
 
     let mut result = 0;
     for line in data.lines() {

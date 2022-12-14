@@ -25,7 +25,7 @@ pub fn solve() -> Result<(), io::Error> {
     let mut terminal = Terminal::new(backend)?;
 
     //parsing
-    let data = std::fs::read_to_string("data12.txt").expect("missing data 12");
+    let data = std::fs::read_to_string("data/data12.txt").expect("missing data 12");
 
     let mut graph = Graph::default();
     let mut start = Pos::default();

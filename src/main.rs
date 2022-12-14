@@ -1,6 +1,10 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 #![allow(unused_imports)]
+#![allow(unused_mut)]
+#![allow(unused_must_use)]
+#![allow(unused_variables)]
+
 
 use std::time::Instant;
 

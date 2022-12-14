@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string(r"data3.txt").expect("missing data 3");
+    let data = std::fs::read_to_string(r"data/data3.txt").expect("missing data 3");
 
     //part 1
     let mut total: i32 = 0;

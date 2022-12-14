@@ -1,5 +1,5 @@
 pub fn solve() {
-    let data = std::fs::read_to_string(r"data5.txt").expect("missing data 5");
+    let data = std::fs::read_to_string(r"data/data5.txt").expect("missing data 5");
 
     let (stacks_data, instruction_data) = data.split_once("\n\n").unwrap();
 

@@ -155,7 +155,7 @@ use tui::{
 };
 
 pub fn fancy_terminal() -> Result<(), io::Error> {
-    let data = std::fs::read_to_string(r"data8.txt").expect("missing data 8");
+    let data = std::fs::read_to_string(r"data/data8.txt").expect("missing data 8");
 
     let mut value_map = vec![];
 
