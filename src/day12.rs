@@ -94,7 +94,7 @@ pub fn solve() -> Result<(), io::Error> {
                         .or_insert(new_cost);
 
                     //priority??
-                    new_cost += manhattan_distance(n, end);
+                    //new_cost += manhattan_distance(n, end);
                     frontier.push(n, Reverse(new_cost));
                     came_from
                         .entry(n)
