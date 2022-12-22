@@ -9,13 +9,13 @@ pub fn solve() {
             match s {
                 "[" => {
                     let mut current = itemArena.item(Item::default());
-                    itemArena.arena[parent].items = Some(vec![ current ]);
+                    itemArena.arena[parent].items = Some(vec![current]);
                     parent = current;
-                },
-                "]" => { parent -= 1},
+                }
+                "]" => parent -= 1,
                 _ => {
-                    itemArena.arena[parent].value s.parse::<i32>().unwrap;
-                },
+                    //        itemArena.arena[parent].value s.parse::<i32>().unwrap;
+                }
             }
         }
     }
@@ -29,7 +29,7 @@ struct Item {
 }
 
 impl Item {
-    fn new (index: usize) -> Self {
+    fn new(index: usize) -> Self {
         Self {
             index,
             items: None,

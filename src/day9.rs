@@ -120,7 +120,7 @@ use tui::{
 };
 
 pub fn fancy_terminal() -> Result<(), io::Error> {
-    let data = std::fs::read_to_string(r"data/data9.txt").expect("missing data 9");
+    let data = std::fs::read_to_string(r"data9.txt").expect("missing data 9");
 
     let mut rope = vec![Pos { x: 0, y: 0 }; 10];
     let mut traversed = vec![Pos { x: 0, y: 0 }];
