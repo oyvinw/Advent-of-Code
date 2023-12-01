@@ -15,7 +15,9 @@ Cargo.lock
 **/*.un~
 **/*~
 
-
 # Added by cargo
 
 /target
+
+# Editor
+*.idea
