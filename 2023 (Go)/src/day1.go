@@ -1,15 +1,14 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"github.com/oyvinw/Advent-of-Code/utils"
 	"strconv"
 	"unicode"
 )
 
 func main() {
-	input := readFile("../data/day1.txt")
+	input := utils.ReadFile("../data/day1.txt")
 	output := make([]int, len(input))
 
 	for i := range input {
@@ -80,19 +79,4 @@ func checkForNumber(index int, runes []rune) (isNumber bool, number rune) {
 	}
 
 	return false, '0'
-}
-
-func readFile(path string) []string {
-	file, _ := os.Open(path)
-	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanLines)
-
-	var input []string
-
-	for scanner.Scan() {
-		input = append(input, scanner.Text())
-	}
-
-	file.Close()
-	return input
 }
