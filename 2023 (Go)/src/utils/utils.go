@@ -5,17 +5,39 @@ import (
 	"os"
 )
 
-func ReadFile(path string) []string {
+func ReadFileLines(path string) []string {
 	file, _ := os.Open(path)
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 
-	var input []string
+	var output []string
 
 	for scanner.Scan() {
-		input = append(input, scanner.Text())
+		output = append(output, scanner.Text())
 	}
 
 	file.Close()
-	return input
+	return output
+}
+
+func ReadFileChars(path string) [][]rune {
+	file, _ := os.Open(path)
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+
+	var output [][]rune
+
+	for scanner.Scan() {
+		var line []rune
+		text := []rune(scanner.Text())
+
+		for i := range text {
+			line = append(line, text[i])
+		}
+
+		output = append(output, line)
+	}
+
+	file.Close()
+	return output
 }
