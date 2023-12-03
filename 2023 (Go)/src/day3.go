@@ -59,7 +59,7 @@ func main() {
 		}
 	}
 
-	for k, v := range gearMap {
+	for _, v := range gearMap {
 		if len(v) == 2 {
 			p2Total += v[0] * v[1]
 		}
