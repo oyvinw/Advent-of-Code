@@ -60,7 +60,6 @@ func main() {
 	}
 
 	for k, v := range gearMap {
-		fmt.Println("key: ", k, "value: ", v)
 		if len(v) == 2 {
 			p2Total += v[0] * v[1]
 		}
