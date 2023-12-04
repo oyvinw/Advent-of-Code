@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	input := utils.ReadFileLines("../data/day1.txt")
+	input := utils.ReadFileLines("data/day1.txt")
 	output := make([]int, len(input))
 
 	for i := range input {

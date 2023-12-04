@@ -17,7 +17,7 @@ var gearMap map[Pos][]int
 var currentNumberInt int
 
 func main() {
-	data3 = utils.ReadFileChars("../data/day3.txt")
+	data3 = utils.ReadFileChars("data/day3.txt")
 	parsingNumber := false
 	currentNumber := ""
 	numberPositions := make([]Pos, 0)

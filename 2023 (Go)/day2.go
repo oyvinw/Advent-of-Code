@@ -13,7 +13,7 @@ const blueLimit = 14
 
 func main() {
 
-	games := utils.ReadFileLines("../data/day2.txt")
+	games := utils.ReadFileLines("data/day2.txt")
 	p1total, p2total := 0, 0
 
 	//go through all games, check if there is a subset that exceeds the limits. Add the gameId if there isnt
