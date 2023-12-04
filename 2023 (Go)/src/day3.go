@@ -12,12 +12,12 @@ type Pos struct {
 	x int
 }
 
-var data [][]rune
+var data3 [][]rune
 var gearMap map[Pos][]int
 var currentNumberInt int
 
 func main() {
-	data = utils.ReadFileChars("../data/day3.txt")
+	data3 = utils.ReadFileChars("../data/day3.txt")
 	parsingNumber := false
 	currentNumber := ""
 	numberPositions := make([]Pos, 0)
@@ -25,9 +25,9 @@ func main() {
 
 	gearMap = make(map[Pos][]int)
 
-	for y := range data {
-		for x := range data[y] {
-			if unicode.IsDigit(data[y][x]) {
+	for y := range data3 {
+		for x := range data3[y] {
+			if unicode.IsDigit(data3[y][x]) {
 				if !parsingNumber {
 					//start new number parsing
 					parsingNumber = true
@@ -37,12 +37,12 @@ func main() {
 
 				if parsingNumber {
 					//continue number parsing
-					currentNumber += string(data[y][x])
+					currentNumber += string(data3[y][x])
 					numberPositions = append(numberPositions, Pos{y, x})
 				}
 			}
 
-			if x == len(data[y]) || !unicode.IsDigit(data[y][x]) {
+			if x == len(data3[y]) || !unicode.IsDigit(data3[y][x]) {
 				if parsingNumber {
 					//number finished parsing. Check all neighbours of numbers for symbols other than '.'
 					parsingNumber = false
@@ -82,7 +82,7 @@ func checkNumberForNeighbourSymbols(digitPositions []Pos) bool {
 		start--
 	}
 
-	if !(end == len(data[thisRow])-1) {
+	if !(end == len(data3[thisRow])-1) {
 		end++
 	}
 
@@ -98,7 +98,7 @@ func checkNumberForNeighbourSymbols(digitPositions []Pos) bool {
 		returnVal = false
 	}
 
-	if len(data) > rowBelow {
+	if len(data3) > rowBelow {
 		//Safe to check below
 		if !(searchRow(rowBelow, start, end)) {
 			returnVal = false
@@ -112,7 +112,7 @@ func searchRow(row int, start int, end int) bool {
 	returnVal := true
 
 	for x := start; x <= end; x++ {
-		value := data[row][x]
+		value := data3[row][x]
 		if string(value) != "." && !unicode.IsDigit(value) {
 			if string(value) == "*" {
 				gearPos := Pos{row, x}
