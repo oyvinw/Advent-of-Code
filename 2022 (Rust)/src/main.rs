@@ -13,6 +13,7 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 mod day2;
 mod day3;
 mod day4;
@@ -35,9 +36,10 @@ fn main() {
     //day9::solve();
     //day10::solve();
     //day11::solve();
-    day12::solve();
+    //day12::solve(); //pathfinding
     //day13::solve();
     //day14::solve();
+    day15::solve();
 
     //Fancy stuff
     //day6::fancy_terminal();
