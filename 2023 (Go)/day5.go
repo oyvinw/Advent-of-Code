@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/oyvinw/Advent-of-Code/utils"
+	"github.com/schollz/progressbar/v3"
 	"math"
 	"strconv"
 	"strings"
@@ -92,7 +93,6 @@ func main() {
 		}
 	*/
 
-
 	//P2 (Cro-Magnon implementation)
 	start := time.Now()
 
@@ -122,8 +122,9 @@ func main() {
 		chunks = append(chunks, high-1)
 	}
 
+	bar := progressbar.Default(int64(len(chunks) / 2))
+
 	for s := 0; s < len(chunks); s += 2 {
-		fmt.Println(s/2, " starting range ", chunks[s], "-", chunks[s+1])
 		fMap := make([][]SeedMapEntry, len(farmingMaps))
 		copy(fMap, farmingMaps)
 
@@ -135,7 +136,7 @@ func main() {
 					thisLowest = val
 				}
 			}
-			fmt.Println("Goroutine", s/2, "finished in", time.Now().Sub(start).Milliseconds(), "ms")
+			bar.Add(1)
 			results <- thisLowest
 		}(s, chunks[s], chunks[s+1], fMap)
 	}
