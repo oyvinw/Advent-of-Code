@@ -123,6 +123,7 @@ func main() {
 	}
 
 	bar := progressbar.Default(int64(len(chunks) / 2))
+	bar = progressbar.NewOptions(len(chunks)/2, progressbar.OptionUseANSICodes(true), progressbar.OptionSetElapsedTime(true), progressbar.OptionFullWidth())
 
 	for s := 0; s < len(chunks); s += 2 {
 		fMap := make([][]SeedMapEntry, len(farmingMaps))
@@ -148,7 +149,7 @@ func main() {
 		}
 	}
 
-	println("P2 finished in", time.Now().Sub(start).Milliseconds(), "ms.")
+	fmt.Println("P2 finished in", time.Now().Sub(start).Milliseconds(), "ms.")
 	fmt.Println("P2: ", lowest)
 }
 
