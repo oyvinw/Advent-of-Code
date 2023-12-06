@@ -79,7 +79,6 @@ func main() {
 	}
 
 	fmt.Println("P1: ", lowest)
-	lowest = math.MaxInt
 
 	//P2 (Neanderthal implementation)
 	/*
@@ -93,22 +92,23 @@ func main() {
 		}
 	*/
 
-	start := time.Now()
 
 	//P2 (Cro-Magnon implementation)
+	start := time.Now()
+
+	lowest = math.MaxInt
+
 	results := make(chan int)
 
 	chunkSize := math.MaxInt
 	chunks := make([]int, 0)
 
 	for s := 0; s < len(seeds); s += 2 {
-		nv := (seeds[s] + seeds[s+1]) - seeds[s]
+		nv := seeds[s+1]
 		if nv < chunkSize {
 			chunkSize = nv - 1
 		}
 	}
-
-	println(chunkSize)
 
 	//Chunk it up
 	for s := 0; s < len(seeds); s += 2 {
@@ -147,8 +147,7 @@ func main() {
 		}
 	}
 
-	t := time.Now().Sub(start)
-	println("P2 finished in", t.Milliseconds(), "ms.")
+	println("P2 finished in", time.Now().Sub(start).Milliseconds(), "ms.")
 	fmt.Println("P2: ", lowest)
 }
 
