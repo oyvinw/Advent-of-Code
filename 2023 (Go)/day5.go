@@ -122,8 +122,10 @@ func main() {
 		chunks = append(chunks, high-1)
 	}
 
-	bar := progressbar.Default(int64(len(chunks) / 2))
-	bar = progressbar.NewOptions(len(chunks)/2, progressbar.OptionUseANSICodes(true), progressbar.OptionSetElapsedTime(true), progressbar.OptionFullWidth())
+	bar := progressbar.NewOptions(len(chunks)/2,
+		progressbar.OptionUseANSICodes(true),
+		progressbar.OptionSetElapsedTime(true),
+		progressbar.OptionFullWidth())
 
 	for s := 0; s < len(chunks); s += 2 {
 		fMap := make([][]SeedMapEntry, len(farmingMaps))
