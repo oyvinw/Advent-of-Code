@@ -75,14 +75,14 @@ func main() {
 	}
 
 	slices.SortFunc(hands, handCmp)
-	p1Total := 0
+	total := 0
 
 	for i, v := range hands {
-		p1Total += v.Bid * (i + 1)
+		total += v.Bid * (i + 1)
 		fmt.Println("Hand type:", v.HandType, "Cards:", v.Cards, "Bid:", v.Bid)
 	}
 
-	fmt.Println(p1Total)
+	fmt.Println("Total:", total)
 }
 
 // Filth, but probably efficient (?????)
@@ -100,7 +100,6 @@ func IdentifyHand(hand []int) HandType {
 	}
 
 	delete(handMap, 1)
-
 	setSize := 0
 
 Exit:
