@@ -29,7 +29,7 @@ func (s SeedMapEntry) evaluate(i int) int {
 }
 
 func main() {
-	data := utils.ReadFileLines("data/day5.txt")
+	data := utils.ReadFileLines("day5.txt")
 	seeds := make([]int, 0)
 	currentMapParseIndex := -1
 
@@ -139,7 +139,7 @@ func main() {
 					thisLowest = val
 				}
 			}
-			bar.Add(1)
+			_ = bar.Add(1)
 			results <- thisLowest
 		}(s, chunks[s], chunks[s+1], fMap)
 	}

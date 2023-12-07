@@ -36,7 +36,7 @@ func parseP2(line string) []int {
 }
 
 func main() {
-	data := utils.ReadFileLines("data/day6.txt")
+	data := utils.ReadFileLines("day6.txt")
 
 	times := parseP1(data[0])
 	distances := parseP1(data[1])

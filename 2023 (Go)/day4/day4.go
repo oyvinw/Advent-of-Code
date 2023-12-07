@@ -10,7 +10,7 @@ func main() {
 	var p1total = 0
 	var p2total = 0
 
-	data4 := utils.ReadFileLines("data/day4.txt")
+	data4 := utils.ReadFileLines("day4.txt")
 	prizes := make([]int, len(data4))
 
 	//No value initialization in go apparently
