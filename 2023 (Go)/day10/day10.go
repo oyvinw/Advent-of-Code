@@ -9,7 +9,7 @@ type Pos struct {
 	x, y int
 }
 
-var data = utils.ReadFileChars("day10s.txt")
+var data = utils.ReadFileChars("day10.txt")
 
 func main() {
 	startingPoint := findStartingPoint()
@@ -37,9 +37,7 @@ func main() {
 		for x := range loopArea[y] {
 			if loopArea[y][x] {
 				switch data[y][x] {
-				case 'F', 'L', 'S':
-					withinLoop = !withinLoop
-				case '|':
+				case 'J', 'L', '|', 'S':
 					withinLoop = !withinLoop
 				}
 			} else if withinLoop {
