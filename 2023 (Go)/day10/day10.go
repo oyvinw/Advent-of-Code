@@ -27,7 +27,6 @@ func main() {
 	for currentPos != startingPoint {
 		steps++
 		loopArea[currentPos.y][currentPos.x] = true
-		//fmt.Println("Came from:", strconv.QuoteRune(data[previousPos.y][previousPos.x]), "Going through:", strconv.QuoteRune(data[currentPos.y][currentPos.x]))
 		currentPos, previousPos = FindNext(currentPos, previousPos)
 	}
 
@@ -42,7 +41,6 @@ func main() {
 				}
 			} else if withinLoop {
 				area++
-				fmt.Println(y+1, x+1)
 			}
 		}
 	}

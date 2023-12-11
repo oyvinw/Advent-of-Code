@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// ReadFileLines reads the file line by line
 func ReadFileLines(path string) []string {
 	file, _ := os.Open(path)
 	scanner := bufio.NewScanner(file)
@@ -20,6 +21,7 @@ func ReadFileLines(path string) []string {
 	return output
 }
 
+// ReadFileChars reads the file rune for rune
 func ReadFileChars(path string) [][]rune {
 	file, _ := os.Open(path)
 	scanner := bufio.NewScanner(file)
@@ -40,4 +42,20 @@ func ReadFileChars(path string) [][]rune {
 
 	file.Close()
 	return output
+}
+
+// Abs No abs for ints in std math :)
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+// Min or min hur dur
+func Min(x, y int) int {
+	if x > y {
+		return y
+	}
+	return x
 }
