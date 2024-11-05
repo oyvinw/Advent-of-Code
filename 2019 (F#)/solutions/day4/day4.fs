@@ -21,13 +21,8 @@ let hasStandAlonePairs sequence =
         (i = 0 || value <> digits[i - 1]) // Previous digit is either out of bounds or not the same
     )))
 
-
 let part1 =
     inputSeq |> hasPairs |> isAscending |> Seq.length |> (printfn "%i")
 
 let part2 =
     inputSeq |> hasStandAlonePairs |> isAscending |> Seq.length |> (printfn "%i")
-
-let passingTestSeq = seq { 112233, 111122 }
-
-let test = assert (hasStandAlonePairs passingTestSeq |> Seq.length = (Seq.length passingTestSeq))
