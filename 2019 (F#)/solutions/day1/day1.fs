@@ -9,7 +9,7 @@ let rec calculateFuelForFuel mass =
     | m -> m + (calculateFuelForFuel (calculateFuelForMass m))
 
 let data =
-    System.IO.File.ReadLines("""C:\git\Advent-of-Code\2019 (F#)\solutions\solutions\day1\day1_input.txt""")
+    System.IO.File.ReadLines("""C:\git\Advent-of-Code\2019 (F#)\solutions\day1\day1_input.txt""")
 
 // part 1
 data |> Seq.sumBy (fun x -> calculateFuelForMass(int x)) |> (printfn "part 1: %i")

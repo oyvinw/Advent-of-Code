@@ -3,7 +3,7 @@
 open System
 
 let data: int array =
-    System.IO.File.ReadAllText("""C:\git\Advent-of-Code\2019 (F#)\solutions\solutions\day2\day2_input.txt""")
+    System.IO.File.ReadAllText("""C:\git\Advent-of-Code\2019 (F#)\solutions\day2\day2_input.txt""")
     |> _.Split(',', StringSplitOptions.RemoveEmptyEntries)
     |> Seq.map(int)
     |> Seq.toArray
